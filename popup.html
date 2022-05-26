@@ -6,7 +6,6 @@
     <title>Websites Manager</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='popup.css'>
-    <script src='popup.js'></script>
 </head>
 <body>
 
@@ -16,7 +15,7 @@
             <div id="website-form">
                 <label for="website-url-label" class="website-url-label">Website Url:</label>
                 <input type="text" id="website-url" name="website-url" value="">
-                <button type="button" id="add-website-button" onclick="AddWebsite()">Block</button>
+                <button type="button" id="add-website-button">Block</button>
             </div>
         </div>
         
@@ -24,11 +23,12 @@
             <li>
                 <label for="website-url-label" class="website-url-label">Website Url:</label>
                 <h7 style="margin-right: 10px"></h7>
-                <button type="button" id="remove-website-button" onclick="RemoveWebsite()">Remove</button>
+                <button type="button" id="remove-website-button">Remove</button>
             </li>
         </ul>
 
     </div>
 
 </body>
+<script src='popup.js'></script>
 </html>

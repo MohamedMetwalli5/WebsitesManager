@@ -6,6 +6,8 @@ function AddWebsite() {
     let the_website_url = document.getElementById("website-url").value;
     if(!Blocked_websites.includes(the_website_url)){
 
+        console.log("The Website Is Added!");
+
         Blocked_websites.push(the_website_url);
 
         let li = document.createElement('li');
@@ -56,7 +58,7 @@ document.getElementById("remove-website-button").addEventListener("click", Remov
 function RemoveWebsite() {
     let the_website_url = document.getElementById("remove-website-button").value;
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1);
-    // console.log(Blocked_websites2);
+    console.log("The Website Is Removed!");
     
-    //document.getElementById("remove-website-button").parentElement.remove();
+    // document.getElementById("remove-website-button").parentElement.remove();
 }

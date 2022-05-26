@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Websites Manager</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='popup.css'>
+    <script src='popup.js'></script>
+</head>
+<body>
+
+    <div id="container">
+        <h1 id="title" style="color: white;">Websites Manager</h1>
+        <div id="website-form-container">
+            <div id="website-form">
+                <label for="website-url-label" class="website-url-label">Website Url:</label>
+                <input type="text" id="website-url" name="website-url" value="">
+                <button type="button" id="add-website-button" onclick="AddWebsite()">Block</button>
+            </div>
+        </div>
+        
+        <ul id="websites-list">
+            <li>
+                <label for="website-url-label" class="website-url-label">Website Url:</label>
+                <h7 style="margin-right: 10px"></h7>
+                <button type="button" id="remove-website-button" onclick="RemoveWebsite()">Remove</button>
+            </li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

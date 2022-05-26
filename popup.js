@@ -1,6 +1,5 @@
 Blocked_websites = []
 
-
 document.getElementById("add-website-button").addEventListener("click", AddWebsite);
 
 function AddWebsite() {
@@ -28,7 +27,7 @@ function AddWebsite() {
 
 
         let h7 = document.createElement('h7');
-        li.innerHTML = the_website_url;
+        h7.innerHTML = the_website_url;
         h7.style.marginRight="10px";
         li.appendChild(h7);
         
@@ -40,9 +39,11 @@ function AddWebsite() {
         button.style.borderRadius="20px";
         button.style.backgroundColor="rgb(244, 70, 35)";
         button.style.cursor="pointer";
+        button.addEventListener("click", RemoveWebsite);
         li.appendChild(button);
         
         document.getElementById("container").appendChild(li);
+        
     }
 }
 
@@ -56,5 +57,5 @@ function RemoveWebsite() {
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1);
     console.log(Blocked_websites);
     
-    // document.getElementById("remove-website-button").parentElement.remove();
+    //document.getElementById("remove-website-button").parentElement.remove();
 }

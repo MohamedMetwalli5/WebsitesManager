@@ -52,10 +52,11 @@ function AddWebsite() {
 
 document.getElementById("remove-website-button").addEventListener("click", RemoveWebsite);
 
+
 function RemoveWebsite() {
     let the_website_url = document.getElementById("remove-website-button").value;
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1);
-    console.log(Blocked_websites);
+    // console.log(Blocked_websites2);
     
     //document.getElementById("remove-website-button").parentElement.remove();
 }

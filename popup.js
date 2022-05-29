@@ -10,6 +10,7 @@ function AddWebsite() {
         console.log("The Website Is Added!");
 
         Blocked_websites.push(the_website_url);
+        SetLocalStorage();
 
         let li = document.createElement('li');
         li.style.width="fit-content";
@@ -60,19 +61,6 @@ function AddWebsite() {
 }
 
 
-document.getElementById("add-website-button").addEventListener("click", SetLocalStorage);
-
-function SetLocalStorage(){ // For storing the blocked websites locally
-    chrome.storage.local.set({storage_key: Blocked_websites}, ()=> {
-        console.log("Value is now ya sa7by : " + Blocked_websites);
-    });
-}
-
-function GetLocalStorage(){ // For getting the localyl stored blocked websites
-    chrome.storage.local.get([storage_key], (result) => {
-        console.log('Value currently is ' + result.BlockedWebsites);
-    });
-}
 
 function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
     let the_website_url = document.getElementsByClassName("remove-website-button").value;
@@ -88,3 +76,15 @@ function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
     document.getElementById(the_button_container_id).remove(); //remove the website from the block list
 }
 
+
+function SetLocalStorage(){ // For storing the blocked websites locally
+    chrome.storage.local.set({storage_key: Blocked_websites}, ()=> {
+        console.log("Value is now ya sa7by : " + Blocked_websites);
+    });
+}
+
+function GetLocalStorage(){ // For getting the localyl stored blocked websites
+    chrome.storage.local.get([storage_key], (result) => {
+        console.log('Value currently is ' + result.BlockedWebsites);
+    });
+}

@@ -85,6 +85,6 @@ function SetLocalStorage(){ // For storing the blocked websites locally
 
 function GetLocalStorage(){ // For getting the localyl stored blocked websites
     chrome.storage.local.get([storage_key], (result) => {
-        console.log('Value currently is ' + result.BlockedWebsites);
+        console.log('Value currently is : ' + result.BlockedWebsites);
     });
 }

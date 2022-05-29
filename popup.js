@@ -41,10 +41,12 @@ function AddWebsite() {
         button.style.borderRadius="20px";
         button.style.backgroundColor="rgb(244, 70, 35)";
         button.style.cursor="pointer";
-        button.addEventListener("click", RemoveWebsite);
+        button.addEventListener("click", function(){RemoveWebsite(the_website_url)});
         li.appendChild(button);
         
         document.getElementById("container").appendChild(li);
+
+        console.log(Blocked_websites);
         
     }
 }
@@ -52,13 +54,19 @@ function AddWebsite() {
 
 
 
-document.getElementById("remove-website-button").addEventListener("click", RemoveWebsite);
+document.getElementById("remove-website-button").addEventListener("click", function(){RemoveWebsite("kkkkkkkkkkkkkkkkkkkkkkkkk")}); //To-do: add the website url of the current remove button instead of the temp "kkkkkkkkkkkkkkkkkkkkkkkkkkkk"
 
 
-function RemoveWebsite() {
+function RemoveWebsite(website_url_to_be_removed) {
     let the_website_url = document.getElementById("remove-website-button").value;
-    Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1);
-    console.log("The Website Is Removed!");
+    Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1); //to make sure that the block list contains only unique values
+    Blocked_websites = Blocked_websites.filter(arrayItem => arrayItem !== website_url_to_be_removed); // Remove the website from the block list
     
-    // document.getElementById("remove-website-button").parentElement.remove();
+    if(Blocked_websites.length > 0){
+        console.log("The Website Is Removed!, and the new list is : \n" + Blocked_websites);
+    }else{
+        console.log("All The Website Are Removed!");
+    }
+
+    // document.getElementById("remove-website-button").remove();
 }

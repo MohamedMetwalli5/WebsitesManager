@@ -26,6 +26,6 @@
         },
         "default_popup": "popup.html"   
     },
-    "permissions": ["activeTab", "storage", "tabs", "scripting", "notifications"]
+    "permissions": ["activeTab", "storage", "tabs", "notifications", "contextMenus"]
 
 }

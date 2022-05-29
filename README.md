@@ -4,4 +4,4 @@
 # Websites Manager 🌐
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/58489322/170587873-e797a5d5-5322-4cdc-ac9c-9d05115ff577.png)
+![image](https://user-images.githubusercontent.com/58489322/170847602-c8b02a41-7e0a-4f69-9fd3-b8c972d1ad28.png)

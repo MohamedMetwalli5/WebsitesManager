@@ -17,7 +17,8 @@ function AddWebsite() {
         li.style.border="solid";
         li.style.borderRadius="20px";
         li.style.backgroundColor="rgb(247, 174, 64)";
-        li.style.padding="5px";
+        li.style.padding="5px"; 
+        li.class = "remove-website-button";
 
         
 
@@ -41,7 +42,12 @@ function AddWebsite() {
         button.style.borderRadius="20px";
         button.style.backgroundColor="rgb(244, 70, 35)";
         button.style.cursor="pointer";
-        button.addEventListener("click", function(){RemoveWebsite(the_website_url)});
+        var number = "";
+        var length = the_website_url.length;
+        for (var i = 0; i < length; i++)
+            number += the_website_url.charCodeAt(i).toString(16); //encode the website url to a string from a number in the base 16
+        li.id = number.toString(16); //assign the new button container id the new encoded value
+        button.addEventListener("click", function(){RemoveWebsite(the_website_url, number.toString(16))});
         li.appendChild(button);
         
         document.getElementById("container").appendChild(li);
@@ -54,11 +60,8 @@ function AddWebsite() {
 
 
 
-document.getElementById("remove-website-button").addEventListener("click", function(){RemoveWebsite("kkkkkkkkkkkkkkkkkkkkkkkkk")}); //To-do: add the website url of the current remove button instead of the temp "kkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-
-
-function RemoveWebsite(website_url_to_be_removed) {
-    let the_website_url = document.getElementById("remove-website-button").value;
+function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
+    let the_website_url = document.getElementsByClassName("remove-website-button").value;
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1); //to make sure that the block list contains only unique values
     Blocked_websites = Blocked_websites.filter(arrayItem => arrayItem !== website_url_to_be_removed); // Remove the website from the block list
     
@@ -68,5 +71,5 @@ function RemoveWebsite(website_url_to_be_removed) {
         console.log("All The Website Are Removed!");
     }
 
-    // document.getElementById("remove-website-button").remove();
+    document.getElementById(the_button_container_id).remove(); //remove the website from the block list
 }

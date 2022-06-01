@@ -1,17 +1,5 @@
-
-/*
 try{
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-        if(changeInfo.status == 'complete'){
-            chrome.scripting.executeScript({
-                files: ['popup.js'],
-                target:{tabId: tab.id}
-            });
-        }
-    });
-
+    console.log("heeeeeeeeeeere");
 }catch(e){
-    console.log(e);
+    console.error(e);
 }
-
-*/

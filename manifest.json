@@ -12,7 +12,7 @@
     },
     "content_scripts": [
         {
-          "matches": ["*://*.com/*"],
+          "matches": ["*://*/*"],
           "css": ["popup.css"],
           "js": ["popup.js"]
         }

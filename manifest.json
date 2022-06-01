@@ -30,6 +30,6 @@
         },
         "default_popup": "popup.html"   
     },
-    "permissions": ["activeTab", "storage", "tabs", "notifications", "contextMenus"]
+    "permissions": ["activeTab", "storage", "tabs", "scripting", "notifications", "contextMenus"]
 
 }

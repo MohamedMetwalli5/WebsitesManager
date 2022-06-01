@@ -79,7 +79,7 @@ function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
 
 
 function WebsiteBlocker(website_url){
-    document.getElementById("container").remove();
+    //to-do
 }
 
 
@@ -88,11 +88,12 @@ function IsCurrentTabBlocked(){ //to check to whether to block the current site 
         if(Blocked_websites.includes(tabs[0].url)){
             WebsiteBlocker(tabs[0].url);
             console.log("The current page is blocked!");
+            close();
         }
     });
 }
 
-setInterval(IsCurrentTabBlocked, 3000);
+// setInterval(IsCurrentTabBlocked, 3000);
 
 function SetLocalStorage(){ // For storing the blocked websites locally
     chrome.storage.local.set({storage_key: Blocked_websites}, ()=> {
@@ -105,3 +106,7 @@ function GetLocalStorage(){ // For getting the localyl stored blocked websites
         console.log('Local Storage Value currently is : ' + result.BlockedWebsites);
     });
 }
+
+chrome.runtime.sendMessage({name: "message"}, (response) => {
+    document.querySelector('body').innerHTML = response.text;
+});

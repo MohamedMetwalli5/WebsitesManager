@@ -10,11 +10,15 @@
         "48": "./icons/icon_48.png",
         "128": "./icons/icon_128.png"
     },
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
           "matches": ["*://*/*"],
           "css": ["popup.css"],
-          "js": ["popup.js"]
+          "js": ["popup.js"],
+          "run_at": "document_end"
         }
       ],
     "action": {

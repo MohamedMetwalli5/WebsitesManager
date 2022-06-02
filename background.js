@@ -83,18 +83,6 @@ function WebsiteBlocker(website_url){
 }
 
 
-function IsCurrentTabBlocked(){ //to check to whether to block the current site or not
-    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-        if(Blocked_websites.includes(tabs[0].url)){
-            WebsiteBlocker(tabs[0].url);
-            console.log("The current page is blocked!");
-            close();
-        }
-    });
-}
-
-// setInterval(IsCurrentTabBlocked, 3000);
-
 function SetLocalStorage(){ // For storing the blocked websites locally
     chrome.storage.local.set({storage_key: Blocked_websites}, ()=> {
         console.log("Set Local Storage has a new value currently : " + Blocked_websites);

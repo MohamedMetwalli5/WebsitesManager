@@ -1,13 +1,12 @@
+Blocked_websites = ["www.facebook.com"];
 
-alert("helooooooooooooooo")
-/*
-if(typeof init === 'undefined'){
-    const init = function(){
-        const injectElement = document.createElement('div');
-        injectElement.className = 'fsdfsdf';
-        injectElement.innerHTML = "ffffffffffffffffffffffffffffffffffffffff";
-        document.body.appendChild(injectElement);
+function IsCurrentTabBlocked(){ //to check to whether to block the current site or not
+    if(Blocked_websites.includes(window.location.hostname)){
+            console.log("The current page is blocked!");
+            document.body.innerHTML = "The current page is blocked!";
     }
-    init();
 }
-*/
+
+IsCurrentTabBlocked();
+
+// setInterval(IsCurrentTabBlocked, 3000);

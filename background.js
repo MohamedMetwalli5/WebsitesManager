@@ -1,4 +1,5 @@
 Blocked_websites = []
+
 storage_key = "BlockedWebsites"
 
 document.getElementById("add-website-button").addEventListener("click", AddWebsite);
@@ -11,7 +12,6 @@ function AddWebsite() {
 
         Blocked_websites.push(the_website_url);
         SetLocalStorage();
-        WebsiteBlocker(the_website_url);
 
         let li = document.createElement('li');
         li.style.width="fit-content";
@@ -62,7 +62,6 @@ function AddWebsite() {
 }
 
 
-
 function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
     let the_website_url = document.getElementsByClassName("remove-website-button").value;
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1); //to make sure that the block list contains only unique values
@@ -75,11 +74,6 @@ function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
     }
 
     document.getElementById(the_button_container_id).remove(); //remove the website from the block list
-}
-
-
-function WebsiteBlocker(website_url){
-    //to-do
 }
 
 

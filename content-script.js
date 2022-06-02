@@ -15,7 +15,7 @@ const generateCSS = () => {
       width: 80%;
       margin: 100px auto;
     }
-    #page_name {
+    #page_url {
       font-size: 90px;
       position: relative;
       display: inline-block;
@@ -193,7 +193,7 @@ const generateCSS = () => {
      </style>`;
   };
   
-  const generateHTML = (pageName) => {
+  const generateHTML = (pageURL) => {
     return `
      
      <div id="clouds">
@@ -205,7 +205,7 @@ const generateCSS = () => {
         <div class="cloud x5"></div>
     </div>
     <div class='c'>
-        <div id='page_name'>${pageName} is blocked</div>
+        <div id='page_url'>${pageURL} is blocked</div>
         <div class='_1'>GET BACK TO WORK!</div>
     </div>
      `;

@@ -7,6 +7,4 @@ function IsCurrentTabBlocked(){ //to check to whether to block the current site 
     }
 }
 
-IsCurrentTabBlocked();
-
-// setInterval(IsCurrentTabBlocked, 3000);
+setInterval(IsCurrentTabBlocked, 2000);

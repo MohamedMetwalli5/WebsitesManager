@@ -6,6 +6,7 @@ document.getElementById("add-website-button").addEventListener("click", AddWebsi
 
 function AddWebsite() {
     let the_website_url = document.getElementById("website-url").value;
+
     if(!Blocked_websites.includes(the_website_url)){
 
         console.log("The Website Is Added!");
@@ -62,6 +63,7 @@ function AddWebsite() {
 }
 
 
+
 function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
     let the_website_url = document.getElementsByClassName("remove-website-button").value;
     Blocked_websites.indexOf(the_website_url) !== -1 && Blocked_websites.splice(Blocked_websites.indexOf(the_website_url), 1); //to make sure that the block list contains only unique values
@@ -78,13 +80,13 @@ function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
 
 
 function SetLocalStorage(){ // For storing the blocked websites locally
-    chrome.storage.local.set({storage_key: Blocked_websites}, ()=> {
-        console.log("Set Local Storage has a new value currently : " + Blocked_websites);
-    });
+    chrome.storage.sync.set({"BlockedWeb": Blocked_websites}, function(){ //storing the data locally
+        alert("success!");
+    });  
 }
 
 function GetLocalStorage(){ // For getting the localyl stored blocked websites
-    chrome.storage.local.get([storage_key], (result) => {
-        console.log('Local Storage Value currently is : ' + result.BlockedWebsites);
+    chrome.storage.sync.get("BlockedWeb", function(data){
+        alert(data.BlockedWeb);
     });
 }

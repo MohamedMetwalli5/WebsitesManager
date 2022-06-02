@@ -1,5 +1,6 @@
 Blocked_websites = ["www.netflix.com"]; // to-do is to pass the blocked_websites from "background.js to content-script.js"
 
+
 const generateCSS = () => {
     return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
     body {

@@ -1,5 +1,15 @@
+
 Blocked_websites = ["www.netflix.com"]; // to-do is to pass the blocked_websites from "background.js to content-script.js"
 
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse){
+     localStorage["The_Blocked_websites"] = request.The_Blocked_websites;
+
+     Blocked_websites.push(localStorage["The_Blocked_websites"]);
+  }
+);
+
+console.log(Blocked_websites);
 
 const generateCSS = () => {
     return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);

@@ -81,8 +81,12 @@ function RemoveWebsite(website_url_to_be_removed, the_button_container_id) {
 
 function SetLocalStorage(){ // For storing the blocked websites locally
     chrome.storage.sync.set({"BlockedWeb": Blocked_websites}, function(){ //storing the data locally
-        alert("success!");
+        alert("Blocked Successfully!");
     });  
+    chrome.runtime.sendMessage({
+        The_Blocked_websites: Blocked_websites[Blocked_websites.length-1]
+    });
+
 }
 
 function GetLocalStorage(){ // For getting the localyl stored blocked websites

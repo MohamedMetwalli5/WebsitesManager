@@ -4,9 +4,10 @@
 # Websites Manager 🌐
 
 ## About
-It is a websites manager extension that helps you block and unblock websites to keep you away from distractions.
+This website management extension allows you to temporarily block and unblock websites, helping you minimize distractions and stay focused until you complete your work.
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/a7e68824-5bd1-47a5-b6bc-f17cb838d9bc)
-![image](https://user-images.githubusercontent.com/58489322/171550791-c1443b78-cb9b-4e3b-8ad9-b4d3656f0435.png)
+![image](https://github.com/user-attachments/assets/fac5dbf3-d0f4-4b47-846f-64d445de92b5)
+
 

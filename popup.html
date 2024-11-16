@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Websites Manager</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='popup.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Websites Manager</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-
-    <div id="container">
-        <h2 id="title" style="color: white;">Websites Manager</h2>
-        <div id="website-form-container">
-            <div id="website-form">
-                <label for="website-url-label" class="website-url-label">Website Url:</label>
-                <input type="text" id="website-url" name="website-url" value="">
-                <button type="button" id="add-website-button">Block</button>
-            </div>
-        </div>
-    </div>
-
+  <div class="container">
+    <h1 style="color: aliceblue;">Websites Manager</h1>
+    <input type="text" id="websiteInput" placeholder="Enter website URL" />
+    <button id="blockButton">Block</button>
+    <ul id="blockedList"></ul>
+  </div>
+  <script src="popup.js"></script>
 </body>
-<script src='background.js'></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 </html>

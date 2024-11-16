@@ -1,16 +1,3 @@
-
-Blocked_websites = ["www.netflix.com"]; // to-do is to pass the blocked_websites from "background.js to content-script.js"
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse){
-     localStorage["The_Blocked_websites"] = request.The_Blocked_websites;
-
-     Blocked_websites.push(localStorage["The_Blocked_websites"]);
-  }
-);
-
-console.log(Blocked_websites);
-
 const generateCSS = () => {
     return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
     body {
@@ -204,6 +191,8 @@ const generateCSS = () => {
      </style>`;
   };
   
+
+  
   const generateHTML = (pageURL) => {
     return `
      
@@ -222,13 +211,15 @@ const generateCSS = () => {
      `;
   };
 
-  
-function IsCurrentTabBlocked(){ //to check to whether to block the current site or not
-    if(Blocked_websites.includes(window.location.hostname)){
-            console.log("The current page is blocked!");
-            document.head.innerHTML = generateCSS();
-            document.body.innerHTML = generateHTML(window.location.hostname);
-    }
+
+function IsCurrentTabBlocked() {
+  chrome.storage.local.get(['blockedSites'], (result) => {
+      if (result.blockedSites && result.blockedSites.includes(window.location.hostname)) {
+          console.log("Blocked Websites:", result.blockedSites);
+          document.head.innerHTML = generateCSS();
+          document.body.innerHTML = generateHTML(window.location.hostname);
+      }
+  });
 }
 
-IsCurrentTabBlocked();
+IsCurrentTabBlocked(); 
